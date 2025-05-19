@@ -1,0 +1,28 @@
+<!-- Quy ước làm việc với Js
+Trong trang HTML, chúng ta có 03 cách để đặt Javascript (JS) vào trang như sau:
+
+Cách 1: Inline
+Với cách này, bạn thực hiện viết mã JS vào trực tiếp trong thẻ HTML
+
+Ví dụ
+
+Copy
+<input type="button" onclick="alert('Hello world')" value="Click Me"/>
+Cách 2: Internal
+Với cách viết này, bạn sẽ viết trong file HTML hiện tại. Yêu cầu đoạn mã đấy phải đặt trong cặp thẻ <script></script>. Thông thường chúng ta sẽ đặt cặp thẻ script này vào trong thẻ <head>, ngoài ra nếu chúng ta đặt trong <body> cũng không có vấn đề gì. -->
+<html>
+	<head>
+		<title></title>
+		<script>
+			alert("Hello World !");
+		</script>
+	</head>
+	<body>
+		<script>
+			alert("Hello Zent !");
+		</script>
+	</body>
+</html>
+<!-- Cách 3: External
+Đối với external, bạn có thể tạo một file riêng với đuôi mở rộng .js và viết toàn bộ mã javascript vào trong file có đuôi .js. Để áp dụng vào file HTML, bạn cần nhúng file có đuôi .js vào file html bằng cách khai báo thẻ <script> có thuộc tính src là đường dẫn đến file có đuôi .js.  -->
+    <script language="javascript" src="demo.js"></script>

@@ -1,0 +1,67 @@
+body {
+    background-color: #fffce8; /* light yellow */
+    font-family: Arial, sans-serif;
+  }
+  
+  #main-title {
+    color: #1b361e;
+    font-size: 50px;
+    text-align: center;
+  }
+  
+  ul {
+    border: 2px dashed #d47c28;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 600px;
+    background-color: #fff7db;
+    margin: auto;
+  }
+  
+  li {
+    list-style: none;
+    margin: 10px 0;
+    padding: 8px;
+    border-radius: 6px;
+  }
+  
+  .morning {
+    background-color: white;
+  }
+  .afternoon {
+    background-color: #f5a86b; /* cam đậm */
+  }
+  
+  .evening {
+    background-color: #d9f2ff; /* xanh nhạt */
+  }
+  
+  .important {
+    font-weight: bold;
+    background-color: white !important;
+    color: #000;
+  }
+  
+  ul > li {
+    transition: 0,2s ease;
+  }
+  
+  li:hover::after {
+    content: " ✅";
+  }
+
+li:nth-child(odd) {
+  background-color: #ffd6a5 ; /* cam nhạt */
+}
+  .note[data-type="reminder"] {
+    color: #2e8b57;
+    font-style: italic;
+    margin-top: 15px;
+    text-align: center;
+
+}
+  input[type="checkbox"] {
+    accent-color: #28a745;
+    transform: scale(1.5);
+  }
+  

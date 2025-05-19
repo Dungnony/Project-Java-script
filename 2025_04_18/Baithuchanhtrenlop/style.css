@@ -1,0 +1,16 @@
+p{
+    display: inline-block;
+    margin-top: 10px;
+    height: 30px;
+    background-color: orange;
+  }
+
+.test4 {
+    background: red;
+    float: left;
+}
+
+.test5 {
+    background: orange;
+    float: right;
+}

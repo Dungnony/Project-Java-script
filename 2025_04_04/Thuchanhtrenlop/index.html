@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+  <!-- <style>
+  div > p {
+    background-color: yellow;
+  }
+  </style>
+  <div>
+    <p>Thẻ p thứ 1.</p>
+    <p>Thẻ p thứ 2</p>
+    <section><p>Thẻ p thứ 3</p></section> 
+    
+    <p>Thẻ p thứ 4</p>
+  </div>
+  <p>Thẻ p thứ 5 không thuộc div</p>
+  <p>Thẻ p thứ 6 không thuộc div</p> -->
+  +) Bộ chọn anh em liền kề (+)
+  Bộ chọn này xác định 1 phần tử nằm ngay sau phần tử đang chỉ định. Sử dụng dấu + để thể hiện mối quan hệ này.
+  <!-- <style>
+    div + p {
+      background-color: yellow;
+    }
+  </style>
+  <div>
+    <p>Thẻ p1 trong thẻ div</p>
+    <p>Thẻ p2 trong thẻ div</p>
+  </div>
+  Thẻ p3 sau thẻ div bị tác động bởi background màu vàng. 
+  Do thẻ p3 là thẻ anh em liền kề sau với thẻ div 
+  <p>Thẻ p3 sau thẻ div</p>
+  <p>Thẻ p4 sau thẻ div</p> -->
+  Bộ chọn anh chị em chung (~)
+Bộ chọn này có phần tác động rộng hơn so với bộ chọn anh em liền kề phía trên, nó xác định tất cả thành phần anh chị em phía sau phần tử chỉ định. Sử dụng dấu ~ để thể hiện mối quan hệ này.
+<!-- <style>
+  div ~ p {
+    background-color: yellow;
+  }
+  </style>
+  <p>Đoạn 1</p>
+  <div>
+    <p>Đoạn 2</p>
+  </div>
+   Trong trường hợp này thẻ p của đoạn 3 và đoạn 4 
+  sẽ bị tác động bởi CSS và có màu nền là màu vàng.  
+  <p>Đoạn 3</p>
+  <i>Hello world</i>
+  <p>Đoạn 4</p> -->
+* loai 3 : Bộ chọn lớp giả
+<!-- a:link: Bộ chọn được sử dụng để chọn các liên kết chưa được truy cập
+a:visited: Bộ chọn được sử dụng để chọn các liên kết đã được truy cập
+a:hover: Bộ chọn được sử dụng khi di chuột vào liên kết
+a:active: Bộ chọn được sử dụng khi liên kết đang được truy cập. Bạn có thể click và giữ để thấy rõ sự thay đổi. 
+
+<style>
+  a:visited {
+    color: green;
+  }
+  a:link {
+    color: red;
+  }
+  
+  a:hover {
+    color: hotpink;
+  }
+  
+  a:active {
+    color: blue;
+  }
+  </style>
+</head>
+<body>
+<h2>CSS Links</h2>
+<p><b><a href="https://vnua.edu.vn" target="_blank">This is a link</a></b></p> -->
+<!-- :first-child :Bộ chọn xác định phần tử đầu tiên trong tập các phần tử được xác định
+:last-child
+Cú pháp: Bộ chọn xác định phần tử cuối cùng trong tập các phần tử được xác định -->
+* loai 4 :Bộ chọn phần tử giả
+Bộ chọn này sử dụng để tác động css lên một phần cụ thể trong phần tử xác định. Với bộ chọn phần tử giả sẽ bắt đầu bằng 2 dấu hai chấm (::)
+<!-- <style>
+  p::first-letter {
+    color: red;
+    font-size: 20px;
+  }
+</style>
+ Chữ "C" đầu tiên trong từ Chào sẽ được nhận css như trên 
+  với màu đỏ và kích cỡ chữ là 20px  
+  <p>Chào mừng bạn đến với môn học</p> -->
+  ::fist-line: Bộ chọn cho phép chọn ra dòng đầu tiên trong nội dung của phần tử chỉ định
+  ::before: Sử dụng để chèn một nội dung vào trước phần tử chỉ định. Tuy nhiên phần tử giả này nằm trong phần tử chỉ định. Đối với phần tử giả này, bạn cần phải đặt thuộc tínhcontent với giá trị có thể là rỗng, url của hình ảnh hoặc nội dung dạng text. Nếu không có thuộc tính content thì phần tử giả này sẽ không xuất hiện.
+  ::after: Ngược lại với ::before, ::after cho phép chèn một nội dung vào sau phần tử chỉ định. 
+
+
+<!-- <style>
+  a[target="_blank"]{
+    background-color: yellow;
+  }
+</style>
+<a href="https://vnua.edu.vn" target="_blank">Phát triển ứng dụng web</a>
+  <a href="https://google.com.vn">google.com</a>
+  <a href="http://www.wikipedia.org" target="_top">wikipedia.org</a> -->
+
+
+</body>
+</html>

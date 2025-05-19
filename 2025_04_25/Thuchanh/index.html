@@ -1,0 +1,537 @@
+<!-- Làm việc với Box Model
+Trong phần này, chúng ta sẽ tìm hiểu về khái niệm Box model và các thành phần tạo nên box model
+
+Trong CSS, khái niệm Box model được nhắc đến khi thực hiện thiết kế và xây dựng bố cục
+
+
+Trong đó: 
+
+content: Phần nội dung văn bản hoặc hình ảnh được hiển thị
+
+padding: Phần đệm trong suốt xung quanh phần nội dung và khoảng cách tới border
+
+border: Phần đường viền bao quanh đối tượng content và padding
+
+margin: Phần đệm trong xuốt bao phía ngoài cùng của đối tượng
+
+Thuộc tính margin
+Thuộc tính margin cho phép thiết lập khoảng lề cách từ đối tượng đang xét so với các đối tượng xung quanh nó.
+
+Với CSS, chúng ta hoàn toàn có thể thiết lập khoảng cách cho các cạnh trên, dưới, trái, phải tùy ý.
+
+CSS có các thuộc tính riêng để chỉ định thiết lập khoảng cách đó từng bên như sau: 
+
+margin-top: Khoảng cách từ đối tượng đang xét so với đối tượng ở phía trên nó
+
+margin-bottom: Khoảng cách từ đối tượng đang xét so với đối tượng ở phía dưới nó
+
+margin-left: Khoảng cách từ đối tượng đang xét so với đối tượng nằm bên trái nó
+
+margin-right: Khoảng cách từ đối tượng đang xét so với đối tượng nằm bên phải nó
+
+Giá trị của các thuộc tính này có thể là auto hoặc kích thước (đơn vị pt, em, rem,...) hoặc inherit (kế thừa từ thành phần chứa nó) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Học lập trình web tại Zent</title>
+	<style>
+		h3{
+			border: 1px solid red;
+			margin-top: 10px;
+			margin-left: 10px;
+			margin-right: 20px;
+			margin-bottom: 40px;
+		}
+	</style>
+</head>
+<body>
+	<p>Nội dung trước thẻ h3</p>
+	<h3>Nội dung thẻ h3</h3>
+	<p>Nội dung sau thẻ h3</p>
+</body>
+</html>
+<!-- Cú pháp rút gọn
+
+Cách 1: Các giá trị theo thứ tự các cạnh lần lượt là: top - right - bottom - left (theo chiều kim đồng hồ)
+
+Copy
+element{
+    margin: value1 value2 value3 value4;
+}
+Cách 2: Các giá trị theo thứ tự lần lượt áp dụng cho các cạnh: top/bottom và left-right
+
+Copy
+element{
+    margin: value1 value2;
+}
+Cách 3: Các giá trị theo thứ tự lần lượt áp dụng cho tất cả 4 cạnh
+
+Copy
+element{
+    margin: value;
+} 
+    huộc tính padding
+Thuộc tính padding cho phép thiết lập vùng đệm từ đường viền (border) của đối tượng đang xét so với nội dung bên trong của nó.
+
+Với CSS, chúng ta hoàn toàn có thể thiết lập khoảng cách cho các cạnh trên, dưới, trái, phải tùy ý.
+
+CSS có các thuộc tính riêng để chỉ định thiết lập khoảng cách đó từng bên như sau: 
+
+margin-top: Vùng đệm phía trên
+
+padding-bottom: Vùng đệm phía dưới
+
+padding-left: Vùng đệm phía bên trái
+
+padding-right: Vùng đệm phía bên phải
+
+Giá trị của các thuộc tính này có thể là auto hoặc kích thước (đơn vị pt, em, rem,...) hoặc inherit (kế thừa từ thành phần chứa nó)
+ 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Học lập trình web tại Zent</title>
+	<style>
+		h3{
+			border: 1px solid red;
+			padding-top: 10px;
+			padding-left: 10px;
+			padding-right: 20px;
+			padding-bottom: 40px;
+		}
+	</style>
+</head>
+<body>
+	<p>Nội dung trước thẻ h3</p>
+	<h3>Nội dung thẻ h3</h3>
+	<p>Nội dung sau thẻ h3</p>
+</body>
+</html>
+<!-- Cú pháp rút gọn
+
+Cách 1: Các giá trị theo thứ tự các cạnh lần lượt là: top - right - bottom - left (theo chiều kim đồng hồ)
+
+Copy
+element{
+    padding: value1 value2 value3 value4;
+}
+Cách 2: Các giá trị theo thứ tự lần lượt áp dụng cho các cạnh: top/bottom và left-right
+
+Copy
+element{
+    padding: value1 value2;
+}
+Cách 3: Các giá trị theo thứ tự lần lượt áp dụng cho tất cả 4 cạnh
+
+Copy
+element{
+    padding: value;
+}
+-->
+<!-- Thuộc tính box-sizing
+Tuy không nằm trong khái niệm về box-model nhưng thuộc tính box-sizing cũng đóng vai trò hết sức quan trọng để đảm bảo kích thước của khối (phần tử) khi chúng ta sử dụng padding, border.
+
+Thuộc tính box-sizing là một thuộc tính sẽ giúp bạn có thể tính toán và làm chủ được kích thước của một phần tử dựa vào thuộc tính width và height đã được thiết lập bên trong. Hay nói cách khác, là bạn sẽ muốn thuộc tínhwidth và height là kích thước đã bao gồm border và padding.
+
+Cú pháp
+
+Copy
+element{
+    box-sizing: value;
+}
+Trong đó value bao gồm: 
+
+content-box: Giá trị mặc định, nghĩa là giá trị width và height chỉ áp dụng cho khu vực nội dung bên trong, không bao gồm padding, border và margin. (Mặc định)
+
+border-box: Khi thiết lập giá trị này, thì width và heigh sẽ bao gồm cho cả phần nội dung, padding và border nhưng không bao gồm margin. (khuyến khích ưu tiên sử dụng giá trị này) 
+
+padding-box: Với giá trị này thì width và height chỉ bao gồm cho phần nội dung và padding, không bao gồm border và margin. (Chỉ có tác dụng với trình duyệt firefox) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Học lập trình web tại Zent</title>
+	<style>
+		div{
+			background-color: red;
+			width: 500px;
+			height: 500px;
+			padding: 10px;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>
+<!-- Thẻ div và thẻ span
+Thẻ div
+Phần tử <div> là một phần tử khối, mặc định thì phần tử khối này không có bất kỳ một định dạng gì, cho nên nó thường được dùng để làm thùng chứa cho các phần tử khác. -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tiêu đề của trang web</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<div>
+		<u>Cách sử dụng phần tử div</u>
+		<i>Cách sử dụng phần tử span</i>
+		<p>Điểm khác giữa phần tử div và phần tử span</p>
+		<h3>Tìm hiểu chức năng của phần tử div và phần tử span</h3>
+	</div>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Tiêu đề của trang web</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<div>
+		<u>Cách sử dụng phần tử div</u>
+		<i>Cách sử dụng phần tử span</i>
+		<p>Điểm khác giữa phần tử div và phần tử span</p>
+		<h3>Tìm hiểu chức năng của phần tử div và phần tử span</h3>
+	</div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Xem ví dụ</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<div style="font-size:30px">
+		<u>Phần tử div</u>
+		<i>Phần tử span</i>
+		<p>Sử dụng phần tử div để thiết kế bố cục trang web</p>
+		<s>Nhóm các phần tử vào bên trong phần tử div</s>
+	</div>
+</body>
+</html>
+<!-- Thẻ span
+Phần tử span là một phần tử nội tuyến, mặc định thì phần tử nội tuyến này không có bất kỳ một định dạng gì, cho nên nó thường được dùng để làm thùng chứa cho những phần tử nội tuyến khác (chủ yếu là văn bản) để định dạng. -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Xem ví dụ</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<p>- Tài liệu <span style="font-size:30px">học</span> HTML</p>
+	<p>- Từ <span style="color:red">cơ bản</span> đến nâng cao</p>
+</body>
+</html>
+<!-- Thẻ blockvà thẻ inline
+Thẻ block
+HTML block là cách hiển thị của một thẻ HTML trên trình duyệt sẽ ở dạng khối, có độ dài 100% và có chiều cao phụ thuộc vào nội dung nằm bên trong. Điều này có nghĩa rằng tất cả những thẻ HTML nằm phía dưới khi hiển thị lên trình duyệt sẽ nằm ở một hàng khác.
+
+Chúng ta có một số thẻ HTML dạng block như: div, p, header, footer, table, ul, li, section, article.. và nhiều thẻ khác.
+
+Đặc điểm chung của các thẻ này là:
+
+Có chiều dài mặc định là 100%
+
+Có thể thiết lập khoảng trống giữa nội dung và đường viền.
+
+Có thể thay đổi độ rộng bằng thuộc tính width.
+
+Ví dụ:
+
+Copy
+<div>Nội dung thẻ div thứ nhất</div>
+<div>Nội dung thẻ div thứ hai</div>
+Thẻ inline
+HTML inline là cách hiển thị nội dung bên trong của thẻ HTML trong 1 phạm vi xác định. Nghĩa là chiều dài của nó sẽ phụ thuộc vào độ lớn của dữ liệu. Vì vậy, các thẻ inline sẽ hiển thị nối tiếp nhau chứ không xuống hàng như block.
+
+Có rất nhiều thẻ HTML hiển thị dạng inline như: span, strong, i, b, a, br, big, button, textarea, label, ...
+
+Ví dụ: 
+
+Copy
+<span>Nội dung thẻ span thứ nhất</span>
+<span>Nội dung thẻ span thứ hai</span> -->
+<!-- Thuộc tính hiển thị display
+Thuộc tính display là thuộc tính quan trọng nhất để kiểm soát bố cục trang web
+
+Thuộc tính display chỉ định cách hiển thị của một phần tử trong trang web
+
+Mọi phần tử HTML đều có giá trị hiển thị mặc định tùy thuộc vào loại phần tử đó. Giá trị hiển thị display mặc định cho hầu hết các phần tử là block (khối) hoặc inline (nội tuyến)
+
+display: block
+Khi sử dụng giá trị block thì phần tử đó sẽ được hiển thị trên một dòng độc lập và chiếm toàn bộ chiều rộng có sẵn (trải dài từ trái qua phải hết mức có thể) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FITA VNUA</title>
+</head>
+<body>
+  <p>Thẻ p thứ 1</p>
+  <p>Thẻ p thứ 2</p>
+  <p>Thẻ p thứ 3</p>
+  <p>Thẻ p thứ 4</p>
+</body>
+</html>
+<!-- display: inline
+Khi sử dụng giá trị inline thì phần tử đó sẽ được hiển thị dưới dạng phần tử nội tuyến (hiển thị trên cùng một dòng, xuống dòng khi vượt quá độ rộng). Đối với giá trị này, thuộc tính chiều rộng (width) và chiều cao (height) và margin (top - bottom), padding (top - bottom) không có tác dụng. 
+
+Cú pháp
+
+Copy
+element{
+    display: inline;
+} -->
+    <!-- Thuộc tính posotion
+Trong phần này, chúng ta sẽ tìm hiểu về thuộc tính position, giá trị của chúng và nó được vận dụng trong trường hợp nào.
+
+Thuộc tính position trong CSS là thuộc tính không thể không nhắc đến khi bạn thực hiện việc thiết lập layout của bạn.
+
+Là thuộc tính giúp bạn tùy chỉnh khu vực hiển thị cho phần tử và việc tùy chỉnh này không hề làm ảnh hưởng đến các phần tử khác, tạo sự linh hoạt trong việc thiết kế giao diện website.
+
+Giá trị của thuộc tính
+relative: Giá trị này thường được sử dụng để thiết lập vị trí của phần tử mà không gây ảnh hưởng tới việc hiển thị ban đầu cũng như các phần tử khác
+
+absolute: Giá trị này dùng để thiết lập vị trí của một phần tử theo phần tử cha có giá trị thuộc tính position là relative hoặc absolute
+
+fixed: Giá trị này giúp cho phần tử luôn cố định một chỗ khi chúng ta scroll trình duyệt
+
+static: Đây là giá trị hiển thị mặc định của thuộc tính position trong CSS
+
+Sau khi thiết lập phần tử có thuộc tính postion, để điều chỉnh được vị trí chúng ta cần thiết lập các giá trị của các cạnh thông qua các thuộc tính top, bottom, left, right
+
+Giá trị relative
+Như đã nói ở trên giá trị này giúp căn chỉnh phần tử mà không gây ảnh hưởng đến các phần tử khác. Nếu bình thường, chúng ta dùng margin hay padding chắc chắn sẽ đẩy các phần tử khác làm ảnh hưởng chung tới layout.
+ -->
+<!-- Thuộc tính trong flexbox
+Trong flexbox có chứa tập các thuộc tính để điều chỉnh vị trí hiển thị linh hoạt của layout. Đầu tiên chúng ta sẽ tìm hiểu về thuộc tính với flex container 
+
+Thuộc tính với flex container
+Thuộc tính display
+Thuộc tính này được sử dụng để định nghĩa ra một vùng chứa là flex container. Khi đó các item nằm trong nó sẽ được sắp xếp theo giá trị mặc định của các thuộc tính liên quan.
+
+Cú pháp
+
+Copy
+.container{
+    display: flex;
+}
+Thuộc tính flex-direction
+Thuộc tính flex-direction cho phép thiết lập hướng của trục chính và từ đó ảnh hưởng đến cách sắp xếp, hiển thị của các item trong đó
+
+
+Cú pháp
+
+Copy
+.container {
+    flex-direction: row | row-reverse | column | column-reverse;
+}
+ Trong đó:
+
+row: Là giá trị mặc định. Các item rải từ trái qua phải
+
+row-reverse: Đảo ngược hàng (Từ phải sang trái)
+
+column: Cột (Từ trên xuống dưới)
+
+column-reverse: Đảo ngược cột (Từ dưới lên trên)
+
+Thuộc tính flex-wrap
+
+Theo mặc định, các items sẽ được đặt trên cùng một dòng. Tuy nhiên chúng ta có thể can thiệp nhờ vào các giá trị của thuộc tính này
+
+
+Cú pháp
+
+Copy
+.container {
+    flex-wrap: nowrap | wrap | wrap-reverse;
+}
+ Trong đó:
+
+nowrap (mặc định): tất cả flex item sẽ được đặt trên một dòng
+
+wrap: flex item sẽ tự động tách dòng, từ trên xuống dưới.
+
+wrap-reverse: flex item sẽ tách thành nhiều dòng từ dưới lên trên
+
+Thuộc tính flex-flow
+Thuộc tính này là cách viết tắt của hai thuộc tính trên là flex-direction và flex-wrap
+
+Cú pháp
+
+Copy
+.container {
+    flex-flow: flex-0direction flex-wrap
+}
+Thuộc tính justify-content
+Thuộc tính này cho phép thiết lập khoảng cách giữa các items theo trục chính (main axis)
+
+
+Cú pháp
+
+Copy
+.container {
+    justify-content:
+    flex-start | flex-end |
+    center | space-between |
+    space-around | space-evenly |
+}
+ Trong đó:
+
+flex-start (giá trị mặc định): Các items được đặt dồn về phía bắt đầu của trục main axis
+
+flex-end: các items được dồn về phía cuối của trục main axis
+
+center: đặt các items dồn vào chính giữa.
+
+space-between: các items được đặt cách đều nhau, item đầu và cuối đặt tại điểm bắt đầu và kết thúc.
+
+space-around: Khoảng cách giữa các item đều nhau. Nhưng, item đầu tiên và cuối cùng có khoảng cách so với container chỉ bằng 1 nửa so với khoảng cách của các item với nhau.
+
+space-evenly: Khoảng cách giữa các item và container là đều nhau.
+
+Thuộc tính align-items
+
+Thuộc tính align-items giúp xác định các items hiển thị như thế nào theo trục cross axis. Có thể hiểu  như justify-content nhưng tác động theo trục cross axis (vuông góc với trục chính - main axis)
+
+Cú pháp
+
+Copy
+.container {
+    align-items:
+    stretch | flex-start |
+    flex-end | center |
+    baseline | first baseline |
+    last baseline |
+    start | end |
+    self-start | self-end |
+    + ... safe | unsafe;
+}
+Trong đó
+
+stretch (mặc định): kéo dài item để lấp đầy container (vẫn tôn trọng min-width / max-width)
+
+flex-start: các item được đặt ở đầu cross axis. Sự khác biệt giữa những điều này là về việc tôn trọng các quy tắc flex-direction
+
+flex-end các mục được đặt ở cuối cross axis. Sự khác biệt một lần nữa là về việc tôn trọng các quy tắc flex-direction
+
+center: các item được căn giữa theo trục cross axis
+
+baseline: các item được căn chỉnh như căn chỉnh đường cơ sở của chúng
+
+Thuộc tính align-content
+
+Thuộc tính này giúp phân phối khoảng trống giữa các item theo trục cross axis
+
+
+Cú pháp
+Copy
+.container {
+    align-content:
+    flex-start | flex-end | center |
+    space-between | space-around | space-evenly |
+    stretch | baseline
+}
+ Trong đó:
+
+flex-start: các hàng item được đặt vào đầu container theo trục cross axis
+
+flex-end / end: các hàng item được đặt ở cuối container (theo trục cross axis). Kết thúc flex (hỗ trợ nhiều hơn) tôn vinh hướng flex trong khi kết thúc tôn vinh hướng chế độ viết.
+
+center: các hàng item nằm giữa container
+
+space-between: các hàng item phân bố đều. Dòng đầu tiên ở đầu container trong khi dòng cuối cùng ở cuối container.
+
+space-around: các hàng item được phân bổ đều với không gian bằng nhau xung quanh mỗi dòng. (Item đầu và cuối vẫn có khoảng cách tối thiểu với cạnh container)
+
+space-evenly: các hàng item được phân bố đều với không gian bằng nhau xung quanh chúng. (cả với cạnh container)
+
+Stretch (mặc định): các hàng item được kéo dãn để lấp đầy khoảng trống (theo trục cross axis)
+
+Thuộc tính với flex item
+
+Thuộc tính order
+
+
+Theo mặc định, các flex item được đặt theo thứ tự sắp xếp trong HTML. Tuy nhiên, thuộc tính order có thể kiểm soát thứ tự xuất hiện của chúng trong flex container.
+
+Cú pháp
+
+Copy
+.item {
+    order: number;
+    /* Mặc định là 0, kiểu int */
+}
+Thuộc tính flex-grow
+
+
+Thuộc tính flex-grow cho phép phân phối thêm khoảng không gian cho các item nếu cần thiết.
+Nó tính toán dựa theo tỉ lệ được phép hiển thị trong flex container
+Nếu tất cả các item có flex-grow được đặt thành 1, thì các item sẽ chiếm mỗi item 1 phần của container.
+Hoặc nếu 1 trong các item có flex-grow là 2 thì item này sẽ chiếm phần lớn (2 phần của flex container_
+
+Cú pháp
+
+Copy
+.item {
+    flex-grow: number;
+    /* Mặc định là 0, không chứa số âm */
+}
+Thuộc tính flex-shrink
+
+Thuộc tính flex-shrink  chỉ định cách item sẽ co lại so với phần còn lại của các item khác bên trong cùng một vùng chứa (flex container)
+
+
+Cú pháp
+
+Copy
+.item {
+    flex-shrink: <number>;
+    /* Mặc định là 1 */
+}
+Thuộc tính flex-basis
+Thuộc tính flex-basis chỉ định độ rộng ban đầu của phần tử (item)
+
+
+Cú pháp 
+
+Copy
+.item {
+    flex-basis: <length> | auto;
+    /* Mặc định là auto */
+}
+Thuộc tính flex
+Thuộc tính flex là viết tắt cho sự kết hợp thuộc tính flex-grow, flex-shrink và flex-basis.
+
+Cú pháp
+
+Copy
+.item {
+    flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'>]
+}
+Thuộc tính align-self
+Thuộc tính align-self tương tự như align-item nhưng chỉ định cho một item riêng.
+
+
+
+Cú pháp
+
+Copy
+.item {
+    align-self:
+    auto | flex-start |
+    flex-end | center |
+    baseline | stretch;
+} -->

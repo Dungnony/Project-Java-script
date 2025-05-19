@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- margin-top: Khoảng cách từ đối tượng đang xét so với đối tượng ở phía trên nó
+margin-bottom: Khoảng cách từ đối tượng đang xét so với đối tượng ở phía dưới nó
+margin-left: Khoảng cách từ đối tượng đang xét so với đối tượng nằm bên trái nó
+margin-right: Khoảng cách từ đối tượng đang xét so với đối tượng nằm bên phải nó -->
+<!-- Cú pháp rút gọn
+Cách 1: Các giá trị theo thứ tự các cạnh lần lượt là: top - right - bottom - left (theo chiều kim đồng hồ)
+element{
+    padding: value1 value2 value3 value4;
+}
+Cách 2: Các giá trị theo thứ tự lần lượt áp dụng cho các cạnh: top/bottom và left-right
+element{
+    padding: value1 value2;
+}
+Cách 3: Các giá trị theo thứ tự lần lượt áp dụng cho tất cả 4 cạnh
+element{
+    padding: value;
+} -->
+
+
+<!-- HTML block là cách hiển thị của một thẻ HTML trên trình duyệt sẽ ở dạng khối, có độ dài 100% và có chiều cao phụ thuộc
+vào nội dung nằm bên trong. Điều này có nghĩa rằng tất cả những thẻ HTML nằm phía dưới khi hiển thị lên trình duyệt sẽ 
+nằm ở một hàng khác.
+Chúng ta có một số thẻ HTML dạng block như: div, p, header, footer, table, ul, li, section, article.. và nhiều thẻ khác. -->
+
+<!-- HTML inline là cách hiển thị nội dung bên trong của thẻ HTML trong 1 phạm vi xác định. Nghĩa là chiều dài của nó sẽ phụ thuộc
+vào độ lớn của dữ liệu. Vì vậy, các thẻ inline sẽ hiển thị nối tiếp nhau chứ không xuống hàng như block.
+Có rất nhiều thẻ HTML hiển thị dạng inline như: span, strong, i, b, a, br, big, button, textarea, label, ... -->
+
+<!-- display: block
+Khi sử dụng giá trị block thì phần tử đó sẽ được hiển thị trên một dòng độc lập và chiếm toàn bộ chiều rộng có sẵn 
+(trải dài từ trái qua phải hết mức có thể)
+display: inline
+Khi sử dụng giá trị inline thì phần tử đó sẽ được hiển thị dưới dạng phần tử nội tuyến (hiển thị trên cùng một dòng,
+xuống dòng khi vượt quá độ rộng). Đối với giá trị này, thuộc tính chiều rộng (width) và chiều cao (height) và margin (top - bottom),
+padding (top - bottom) không có tác dụng.  -->
+    <span>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span>
+    <span>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span>
+    <div class="test1">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+    <div class="test2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+    <div class="test3">
+        <span>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</span>
+        <span>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</span>
+    </div>
+    <p>Thẻ p thứ 1</p>
+    <p>Thẻ p thứ 2</p>
+    <p>Thẻ p thứ 3</p>
+    <p>Thẻ p thứ 4</p>
+    <p>Thẻ p thứ 1</p>
+    <p>Thẻ p thứ 2</p>
+    <p>Thẻ p thứ 3</p>
+    <p>Thẻ p thứ 4</p>
+
+<!-- Thuộc tính float có tác dụng xác định phần tử hiển thị (nổi) phía bên trái hay bên phải.
+element{
+    float: value;
+}
+Trong đó, value có thể là 1 trong 4 giá trị sau: 
+left: đẩy phần tử sang bên trái
+right: đẩy phần tử sang bên phải
+none: không thiết lập thuộc tính float (mặc định)
+inherit: kế thừa giá trị thuộc tính float của phần tử chứa nó -->
+
+<!-- Thuộc tính clear
+Nếu một phần tử được thiết lập thuộc tính float mà theo sau nó là một phần tử không được thiết lập thuộc tính float thì phần tử
+theo sau sẽ bị ảnh hưởng bởi phần tử trước nó. Để khắc phục vấn đề này, thuộc tính clear cho phép xóa bỏ sự ảnh hưởng của thuộc 
+tính float -->
+<div class="test4">
+    test3
+</div>
+<div class="test5">
+    test4
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    background: linear-gradient(to bottom, #ffffff, #eef1f6);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+  }
+  
+  .menu-item {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .menu-item img {
+    width: 24px;
+    margin-right: 8px;
+  }
+  
+  .menu-item a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .menu-item a:hover {
+    color: #00aaff;
+  }
+  
+  .sales-box {
+    text-align: left;
+  }
+  
+  .sales {
+    margin-bottom: 10px;
+  }
+  
+  .sales p {
+    margin: 0 0 4px 0;
+    font-weight: bold;
+  }
+  
+  .sales img {
+    border: 1px solid #ccc;
+  }
+  
