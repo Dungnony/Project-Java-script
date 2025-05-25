@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var hoaqua = ["Chuoi", "Cam", "Dua", "Mangcut", "Mit", "Dau"];
+        function sapxep(arr) {
+            let copy = arr.slice();
+            copy.sort();
+            copy.reverse();
+            return copy;
+        }
+        document.write(sapxep(hoaqua));
+    </script>
+</body>

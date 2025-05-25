@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Định nghĩa hàm
+        function getInfo(){
+            document.write("Sinh viên UDU <br>");
+        }
+        // Gọi hàm
+        getInfo();
+
+        function xinChao(name){
+            document.write("Xin chào " + name +"<br>");
+        }
+
+        xinChao("Ngọc");
+        xinChao("Đức");
+
+        function tinhTong_vi(a,b){
+            document.write("Tổng 2 số trong hàm: "+(a+b));
+            //return a+b;
+        }
+
+        function tinhTong_en(a,b){
+            document.write("Sum: "+(a+b));
+            //return a+b;
+        }
+
+        function tinhTong_kr(a,b){
+            document.write("합집합: "+(a+b));
+            //return a+b;
+        }
+
+        var tong = tinhTong(10,20);
+        var tong2 = 10+20;
+        document.write("<br> "+(tong + 10));
+    </script>
+</body>
+</html>
