@@ -1,12 +1,27 @@
-<!DOCTYPE html>Add commentMore actions
-<html lang="en">
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+  <meta charset="UTF-8">
+  <title>Admin Page</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; }
+    button { padding: 10px 20px; }
+  </style>
+  <script>
+    window.onload = function() {
+      if (window.sessionStorage.getItem('loggedIn') !== 'true') {
+        window.location.href = 'login.html';
+      }
+      document.getElementById('logoutBtn').addEventListener('click', function() {
+        window.sessionStorage.removeItem('loggedIn');
+        window.location.href = 'login.html';
+      });
+    };
+  </script>
 </head>
 <body>
-    <p>Welcome</p>
-    
+  <h1>Trang Quản Trị (Admin)</h1>
+  <p>Chúc mừng bạn đã đăng nhập thành công!</p>
+  <button id="logoutBtn">Logout</button>
 </body>
 </html>
