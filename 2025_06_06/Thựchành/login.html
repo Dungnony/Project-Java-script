@@ -1,40 +1,51 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In</title>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 400px; margin: 50px auto; }
+    label { display: block; margin: 10px 0 5px; }
+    input { width: 100%; padding: 8px; box-sizing: border-box; }
+    button { margin-top: 15px; padding: 10px; width: 100%; }
+  </style>
+  <script>
+
+    window.onload = function() {
+      if (window.sessionStorage.getItem('loggedIn') === 'true') {
+        window.location.href = 'admin.html';
+      }
+
+
+      document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const user = document.getElementById('username').value.trim();
+        const pass = document.getElementById('password').value;
+
+
+        if (user === 'admin' && pass === '12345') {
+          window.sessionStorage.setItem('loggedIn', 'true');   
+          window.location.href = 'admin.html';                 
+        } else {
+          window.alert('Sai username hoặc password, vui lòng thử lại.');
+          this.reset();
+          document.getElementById('username').focus();
+        }
+      });
+    };
+  </script>
 </head>
 <body>
-    <h1 align="center">Welcome to web, please log in</h1>
-    <div id="loginform">
-        <label>username</label>
-        <input type="text" id="username">
-        <label>password</label>
-        <input type="password" id="password">
-        <button type="submit" id="submit" onclick="submit1()">Submit</button>
-    </div>
-    <script>
-        
-       
-        if (localStorage.getItem('trangthai')==="true"){
-            window.location.href="admin.html";
-        }
-        function submit1(){
-            
-            let user=document.getElementById("username").value;
-            let pass=document.getElementById("password").value;
-            if (user==="admin" && pass==='password123'){
-            localStorage.setItem('trangthai','true');
-            console.log('đang chuyển ...');
-            window.location.href='admin.html';
-        }
-        else { alert('vui lòng nhập lại');}
-        
-        }
-        
-        
-    </script>
+  <h1>Đăng nhập</h1>
+  <form id="loginForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" required>
+
+    <button type="submit">Login</button>
+  </form>
 </body>
 </html>
+
