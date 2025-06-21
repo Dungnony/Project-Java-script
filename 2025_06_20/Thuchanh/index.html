@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>ES6</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <script type="text/babel">
+         /* 
+ES6 có thể cách khai báo giá trị cho một biến bằng cách sử dụng: var, let, const. Tùy vào điều kiện cụ thể mà sử dụng cách khai báo cho phù hợp.
+
+var đã có từ các phiên bản Javascript trước đây, khai báo có 2 dạng toàn cục - global (ảnh hưởng mọi nơi) và địa phương - local (chỉ ảnh hưởng bên trong function).
+
+let có từ phiên bản ES6, sử dụng như var, tuy nhiên có tác dụng phạm vi bên trong một khối (như bên trong câu điều kiện if, vòng lặp for, ...).
+
+const sử dụng như let, tuy nhiên const có giá trị không đổi trong suốt ứng dụng.
+
+Để hiểu rõ hơn về var, let, const ta xem các trường hợp bên dưới nhé.
+
+ES6 khai báo giá trị với var
+Khai báo toàn cục
+ES6 default parameters
+Tham số mặc định (default parameters) cho phép các tham số mang giá trị mặc định nếu tham số không có giá trị hoặc giá trị không xác định (undefined).
+
+Hoặc có thể hiểu tham số mặc định là tham số ban đầu được gán cho function.
+
+Xem ví dụ bên dưới để rõ hơn về tham số mặc định:
+
+ES6 - khai báo tham số mặc định
+Có 2 cách khai báo tham số mặc định: gán mặc định tại vị trí khai báo và gán bên trong function
+Biến được khai báo sẽ ảnh hưởng trong toàn bộ ứng dụng.Spread syntax
+Cú pháp spread cho phép một phép lặp lại các phần tử của mãng (array) hay đối tượng (object).*/
+
+var x = 10;
+function myFnc(){
+  console.log(x); /* output: 10, x có ảnh hưởng tới Function */
+}
+console.log(x); /* output: 10, x có ảnh hưởng khắp nơi */
+myFnc();
+var x = 10;
+function myFnc(){
+  var y = x + 5 /* y được khai báo trong Function */
+  console.log(y); /* output: 15, y chỉ có ảnh hưởng bên trong Function */
+}
+console.log(y); /* output: Error */
+myFnc();
+var x = 10;
+if (x === 10) {
+  var x = 20; /* x được gán giá trị mới là 20 */
+  console.log(x); /* output: 20 */
+}
+console.log(x);  /* output: 20 */
+let x = 10;
+if (x === 10) {
+  let x = 20; /* x được let với giá trị mới là 20 */
+  console.log(x); /* output: 20, giá trị mới chỉ có tác dụng trong if */
+}
+console.log(x);  /* output: 10, x bên ngoài if, nên không bị ảnh hưởng giá trị mới */
+
+const x = 10;
+console.log(x);  /* output: 10 */
+const x = 10;
+console.log(x);  /* output: 10 */
+if (x === 10) {
+  x = 20;
+  console.log(x); /* output: Error */
+}
+function multiply(a, b = 1) {
+  return a * b;
+}
+
+console.log(multiply(5, 2)); /* ouput: 10 */
+
+console.log(multiply(5)); /* ouput: 5 */
+function member(name) {
+  name = name || "Guess";
+  return name;
+}
+console.log(member()); /* ouput: Guess */
+console.log(member("Dương Minh Trí")); /* ouput: "Dương Minh Trí" */
+const oldArray = [1, 2, 3];
+const newArray = [...oldArray, 4, 5];
+console.log(newArray); /* ouput: [1, 2, 3, 4, 5] */
+    </script>
+  </body>
+</html>
